@@ -63,25 +63,8 @@ services:
       options: # log rotation
         max-size: "10m"
         max-file: "20"
-  grafana:
-    build: grafana/
-    ports:
-      - "3000:3000"
-    depends_on:
-     - elasticsearch
-    networks:
-      - esnet
-    volumes:
-     - grafana:/var/lib/grafana
-    logging:
-      driver: json-file
-      options: # log rotation
-        max-size: "10m"
-        max-file: "20"
 volumes:
   esdata:
-    driver: local
-  grafana:
     driver: local
 networks:
   esnet:
