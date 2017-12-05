@@ -58,12 +58,3 @@ Optimization of bundles for stagemonitor-kibana, kibana, stateSessionStorageRedi
 | docker-compose with docker toolbox    | http://192.168.99.100:5601 *|
 
 `*` The IP may vary. Execute `docker-machine ip default` to see the actual IP if the default one doesn't work
-
-
-## Grafana
-| Type of Grafana installation          | Grafana URL                |
-|---------------------------------------|----------------------------|
-| docker-compose on local linux machine or docker for mac/windows | [http://localhost:3000](http://localhost:3000) |
-| docker-compose with docker toolbox    | http://192.168.99.100:3000 *|
-
-`*` The IP may vary. Execute `docker-machine ip default` to see the actual IP if the default one doesn't work
