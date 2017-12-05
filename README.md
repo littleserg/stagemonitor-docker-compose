@@ -1,17 +1,28 @@
 # stagemonitor docker-compose
 
-This docker-compose file consists of Elasticsearch, Grafana and Kibana with the [stagemonitor Kibana plugin](https://github.com/stagemonitor/stagemonitor-kibana).
+This docker-compose file consists of Elasticsearch and Kibana with the [stagemonitor Kibana plugin](https://github.com/stagemonitor/stagemonitor-kibana).
 
-## Prerequisites
-Docker and docker-compose
-
-## Run
-
+### Install Docker AND Docker Compose
 ```
-git clone https://github.com/stagemonitor/stagemonitor-docker-compose.git
+wget -qO- https://get.docker.com/ | sh
+# add current user to focker group
+sudo usermod -aG docker $(whoami)
+sudo apt-get -y install python-pip
+sudo pip install docker-compose
+```
+### Fetch configuration AND run it
+```
+git clone https://github.com/littleserg/stagemonitor-docker-compose.git
 cd stagemonitor-docker-compose
 docker-compose build
 docker-compose up
+```
+
+### Add to startup script
+```
+crontab -e
+# add there
+@reboot docker-compose -f /<PATH>/stagemonitor-docker-compose/docker-compose.yml start
 ```
 
 To start the containers in the background run `docker-compose up -d`.
